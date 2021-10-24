@@ -11,9 +11,10 @@
     left: 0;
     right: 0;
     margin: auto;
+    transform: rotate(-90deg);
 }
 
 .progress-circle {
-    stroke-dasharray: 189; /* circumference from javascript */
-    stroke-dashoffset:189;
+    /* stroke-dasharray: 189; 
+    stroke-dashoffset:189; */
 }
