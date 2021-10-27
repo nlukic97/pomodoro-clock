@@ -20,6 +20,10 @@ button:hover {
     cursor: pointer;
 }
 
+.pause-button:hover {
+    color: var(--primary-color);
+}
+
 
 h1 {
     font-size: 100px;

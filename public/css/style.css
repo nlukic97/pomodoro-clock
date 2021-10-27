@@ -2,6 +2,7 @@
 @import './_variables.css';
 @import './_variables.css';
 @import './_typography.css';
+@import './_layout.css';
 
 
 * {
@@ -131,4 +132,33 @@ button.settings-btn:hover {
 button.settings-btn:hover {
     fill:#D7E0FF;
     opacity: 1;
+}
+
+
+/** Card component*/
+.card {
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    width: 540px;
+    margin: 0 auto;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #E3E1E1;
+}
+
+button.apply-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    box-sizing: content-box;
+    border-radius: 100px;
+    padding: 20px 50px;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 100%;
+    font-weight: 700;
+    position: relative;
+    bottom: -26px;
+    left: 50%;
+    transform: translateX(-50%);
 }
