@@ -6,8 +6,7 @@ function setProgress(percent){
     document.querySelector('.progress-circle').style.strokeDashoffset = circumference - percent * circumference/100;
 }
 
-setProgress(99)
-// setProgress(98)
+setProgress(0)
 
 
 
@@ -20,7 +19,7 @@ function startCountdown(){
             return clearInterval(int)
         }
         i++
-    },1)
+    },100)
 }
 
-// startCountdown()
+startCountdown()

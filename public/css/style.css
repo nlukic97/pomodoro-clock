@@ -1,5 +1,7 @@
 @import './_fonts.css';
 @import './_variables.css';
+@import './_variables.css';
+@import './_typography.css';
 
 
 * {
@@ -11,13 +13,48 @@ body {
     font-family:var(--font-1);
     /* font-family:var(--font-2); */
     /* font-family:var(--font-3); */
+    /* background-color: #1E213F; */
+    background-color: #1E213F;
 }
 
 .progress {
     transform: rotate(-90deg);
-    border: 1px solid red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+    stroke: var(--color-red);
 }
 
-.progress-circle {
 
+
+
+
+.counter-container {
+    width: 366px;
+    height: 366px;
+    border-radius: 50%;
+    background-color: #161932;
+    position: relative;
+    margin: 50px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.counter-container::after {
+    content:'';
+    position: absolute;
+    width: 112%;
+    height: 112%;
+    top: -6%;
+    left: -6%;
+    z-index: -1;
+    background: linear-gradient(135deg, #0E112A, #2E325A);
+    border-radius: 50%;
+    
 }
