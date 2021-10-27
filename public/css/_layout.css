@@ -1,3 +1,14 @@
 .container {
-    padding: 40px;
+    padding: 0 40px;
+}
+
+.padding-top-bottom {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.font-container, .colors-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

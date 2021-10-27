@@ -136,6 +136,25 @@ button.settings-btn:hover {
 
 
 /** Card component*/
+.settings-overlay {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    z-index: 4;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    display: none;
+}
+
+body.open-settings .settings-overlay {
+    display: flex;
+    align-items: center;
+}
+
 .card {
     background-color: #FFFFFF;
     border-radius: 25px;
