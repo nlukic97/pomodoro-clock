@@ -7,8 +7,17 @@ h4,
     font-weight: 700;
 }
 
-h3, h4 {
+h3, h4, .pause-button {
     text-transform: uppercase;
+}
+
+.pause-button {
+    font-weight: 700;
+    z-index: 2; /* Not to be covered by the SVG progress element which has a z-index of 1 */
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 
@@ -31,7 +40,7 @@ h2 {
     line-height: 34px;
 }
 
-h3 {
+h3, .pause-button {
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 15px;

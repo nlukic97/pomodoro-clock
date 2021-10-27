@@ -1,7 +1,16 @@
+:root.theme-1 {
+    --primary-color:#F87070;
+}
+
+:root.theme-2 {
+    --primary-color:#70F3F8;
+
+}
+:root.theme-3 {
+    --primary-color:#D881F8;
+}
+
 :root {
-    --color-red:#F87070;
-    --color-blue:#70F3F8;
-    --color-purple:#D881F8;
     --color-gray:#D7E0FF;
     --color-dark-blue:#1E213F;
 
