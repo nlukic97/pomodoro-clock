@@ -105,8 +105,7 @@ button {
     stroke: var(--primary-color);
 }
 
-.progress .progress-circle {
-    /* transition: stroke-dashoffset 0.3s linear; */
+.progress .progress-circle.with-transition {
     transition: stroke-dashoffset 1s linear;
 }
 
