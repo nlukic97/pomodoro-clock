@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="css/style.css">
   
   <!-- JavaScript -->
-  <script src="js/theme.js" defer></script>
   <script type="module" src="js/script.js" defer></script>
   
   
@@ -21,9 +20,9 @@
   <h1 class="heading">Pomodoro</h1>
   
   <div class="timer-states">
-    <div class="state current" data-theme='theme-1'><span>pomodoro</span></div>
-    <div class="state" data-theme='theme-2'><span>short break</span></div>
-    <div class="state" data-theme='theme-3'><span>long break</span></div>
+    <div class="state current" data-duration='pomodoro'><span>pomodoro</span></div>
+    <div class="state" data-duration='shortBreak'><span>short break</span></div>
+    <div class="state" data-duration='longBreak'><span>long break</span></div>
   </div>
   
   <div class="counter-container">
@@ -33,7 +32,7 @@
     </svg>
     
     
-    <h1>17:59</h1>
+    <h1 class="current-time">25:00</h1>
     <button class="timer-handle-button">start</button>
     
     
@@ -70,12 +69,12 @@
   
             <div class="time-container">
               <label for="short-break">short break</label>
-              <input type="number" name="short-break" id="short-break" min="1" max="99" value="5" onKeyDown="return false">
+              <input type="number" name="short-break" id="shortBreak" min="1" max="99" value="5" onKeyDown="return false">
             </div>
   
             <div class="time-container">
               <label for="long-break">long break</label>
-              <input type="number" name="long-break" id="long-break" min="1" max="99" value="15" onKeyDown="return false">
+              <input type="number" name="long-break" id="longBreak" min="1" max="99" value="15" onKeyDown="return false">
             </div>
           </div>
 
