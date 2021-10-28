@@ -16,17 +16,6 @@ export function secondsToTime(seconds){
 }
 
 
-// takes a string from our counter (minutes:seconds) and returns only the sum of the seconds
-// export function timeToSeconds(time){
-//     let numbers = time.split(':')
-//     numbers[0] *= 60 //to get seconds for all these minutes
-
-//     return numbers.reduce(function(acc, curr){
-//         return acc + curr;
-//     })
-// }
-
-
 // calculated the % of time that has passed - used to determine how much % of the circle line should be drawn
 export function getTimePassPercentage(curr, total){
     return curr / total * 100;

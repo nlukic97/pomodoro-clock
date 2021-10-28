@@ -31,6 +31,10 @@ export function getCurrentTimer(){
     return document.querySelector('.timer-states .state.current')
 }
 
+export function getCurrentTimerKey(){
+    return getCurrentTimer().getAttribute('data-duration')
+}
+
 export function changeCurrentTimer(clickedItem){
     getCurrentTimer().classList.remove('current')
     clickedItem.classList.add('current')

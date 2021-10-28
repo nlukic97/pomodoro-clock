@@ -106,8 +106,8 @@ button {
 }
 
 .progress .progress-circle {
-    transition: stroke-dashoffset 0.3s linear;
-    /* transition: stroke-dashoffset 1s linear; */
+    /* transition: stroke-dashoffset 0.3s linear; */
+    transition: stroke-dashoffset 1s linear;
 }
 
 /** Settings gear*/
