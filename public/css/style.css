@@ -166,6 +166,86 @@ body.open-settings .settings-overlay {
     border-bottom: 1px solid #E3E1E1;
 }
 
+/* -------- circle radio buttons for selecting the font and color theme -------- */
+.circle-radio {
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.circle-radio::after {
+    content:'';
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.font-container .circle-radio:after {
+    background-color: #EFF1FA;
+    color: #1E213F;
+    content:'Aa';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.font-container .circle-radio:checked:after {
+    background-color: #161932;
+    color: #fff;
+}
+
+.font-container .circle-radio:first-child:after {
+    font-family: 'Kumbh Sans',sans serif;
+}
+
+.font-container .circle-radio:nth-child(2):after {
+    font-family: 'Roboto Slab',sans serif;
+}
+
+.font-container .circle-radio:nth-child(3):after {
+    font-family: 'Space Mono',sans serif;
+}
+
+/*colors circle selectors*/
+.colors-container .circle-radio:first-child:after {
+    background-color: #F87070;
+    font-family: 'Kumbh Sans',sans serif;
+}
+
+.colors-container .circle-radio:checked:first-child:after {
+    background: url('../assets/tick.svg') no-repeat center center/contain;    
+    background-size: 40%;
+    background-color: #F87070;
+}
+
+.colors-container .circle-radio:nth-child(2):after {
+    background-color: #70F3F8;
+    font-family: 'Roboto Slab',sans serif;
+}
+
+.colors-container .circle-radio:checked:nth-child(2):after {
+    background: url('../assets/tick.svg') no-repeat center center/contain;    
+    background-size: 40%;
+    background-color: #70F3F8;
+}
+
+.colors-container .circle-radio:nth-child(3):after {
+    background-color: #D881F8;
+    font-family: 'Space Mono',sans serif;
+}
+
+.colors-container .circle-radio:checked:nth-child(3):after {
+    background: url('../assets/tick.svg') no-repeat center center/contain;    
+    background-size: 40%;
+    background-color: #D881F8;
+}
+
+
 button.apply-btn {
     background-color: var(--primary-color);
     color: #fff;
