@@ -1,5 +1,8 @@
+import * as Time from './time.js';
+
+// console.log(Time.secondsToTime(61));
+
 const circumference = document.querySelector('.progress-circle').getTotalLength()
-// console.log(circumference);
 
 function setProgress(percent){
     document.querySelector('.progress-circle').style.strokeDasharray = circumference;
@@ -7,8 +10,6 @@ function setProgress(percent){
 }
 
 setProgress(100)
-
-
 
 
 function startCountdown(){
@@ -19,10 +20,10 @@ function startCountdown(){
             return clearInterval(int)
         }
         i++
-    },100)  
+    },1000)  
 }
 
-// startCountdown()
+startCountdown()
 
 
 // Event listener to open the settings modal

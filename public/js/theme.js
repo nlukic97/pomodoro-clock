@@ -1,14 +1,13 @@
 // This would be more suitable for the color theme change in the selection modal
 
-
-let themeButtons = document.querySelectorAll('.timer-states .state')
-themeButtons.forEach(function(btn){
-    btn.addEventListener('click',function(){
-        document.querySelector('.timer-states .state.current').classList.remove('current')
-        this.classList.add('current')
-        // document.querySelector('html').classList = this.getAttribute('data-theme')
-    })
-})
+// this changes the current clock state
+// let themeButtons = document.querySelectorAll('.timer-states .state')
+// themeButtons.forEach(function(btn){
+//     btn.addEventListener('click',function(){
+//         document.querySelector('.timer-states .state.current').classList.remove('current')
+//         this.classList.add('current')
+//     })
+// })
 
 let timerInfo = {
     pomodoro:25,
@@ -22,10 +21,18 @@ let applyBtn = document.querySelector('button.apply-btn').addEventListener('clic
     let theme = document.querySelector('input.circle-radio.theme:checked').value
     
     document.querySelector('html').classList = `${font} ${theme}`;
-    document.body.classList.remove('open-settings')    
+
+    timerInfo.pomodoro = parseInt(document.querySelector('#pomodoro').value)
+    timerInfo.shortBreak = parseInt(document.querySelector('#short-break').value)
+    timerInfo.longBreak = parseInt(document.querySelector('#long-break').value)
+
+    closeModal()   
 })
 
 document.querySelector('button.exit-modal-btn').addEventListener('click',function(){
-    
-    document.body.classList.remove('open-settings')
+    closeModal()   
 })
+
+function closeModal(){
+    document.body.classList.remove('open-settings') 
+}
