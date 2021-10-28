@@ -11,10 +11,7 @@
 }
 
 body {
-    font-family:var(--font-1);
-    /* font-family:var(--font-2); */
-    /* font-family:var(--font-3); */
-    /* background-color: #1E213F; */
+    font-family:var(--primary-font);
     background-color: #1E213F;
 }
 
@@ -48,7 +45,7 @@ button {
 
 .timer-states .state.current {
     background-color: var(--primary-color);
-    color:var(--color-dark-blue);
+    color:#1E213F;
     border-radius: 100px;
 }
 
@@ -162,15 +159,81 @@ body.open-settings .settings-overlay {
     margin: 0 auto;
 }
 
+.card h4 {
+    color: #161932;
+}
+
 .border-bottom {
     border-bottom: 1px solid #E3E1E1;
 }
+
+.first-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.first-line h4 {
+    font-size: 32px;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    line-height: 100%;
+}
+
+/* -------- Timer setting -------- */
+.time-inputs {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+}
+
+.time-container {
+    flex: 1;
+    font-weight: 700;
+}
+
+.time-container label {
+    color: rgba(30, 33, 63, 0.4);
+    font-size: 12px;
+    display: inline-block;
+}
+
+.time-container input {
+    width: 140px;
+    font-size: 14px;
+    background-color: #EFF1FA;
+    color: #1E213F;
+    font-weight: inherit;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 8px;
+    box-sizing: border-box;
+}
+
+
+
+
+
 
 /* -------- circle radio buttons for selecting the font and color theme -------- */
 .circle-radio {
     width: 40px;
     height: 40px;
     position: relative;
+}
+
+.circle-radio:not(:first-child){
+    margin-left: 15px;
+}
+
+.circle-radio:hover {
+    cursor: pointer;
+}
+
+.circle-radio:checked:hover {
+    cursor: default;
 }
 
 .circle-radio::after {

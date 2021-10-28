@@ -9,3 +9,23 @@ themeButtons.forEach(function(btn){
         // document.querySelector('html').classList = this.getAttribute('data-theme')
     })
 })
+
+let timerInfo = {
+    pomodoro:25,
+    shortBreak:5,
+    longBreak:15
+}
+
+// Applying the changes made in the modal
+let applyBtn = document.querySelector('button.apply-btn').addEventListener('click',function(){
+    let font = document.querySelector('input.circle-radio.font:checked').value
+    let theme = document.querySelector('input.circle-radio.theme:checked').value
+    
+    document.querySelector('html').classList = `${font} ${theme}`;
+    document.body.classList.remove('open-settings')    
+})
+
+document.querySelector('button.exit-modal-btn').addEventListener('click',function(){
+    
+    document.body.classList.remove('open-settings')
+})

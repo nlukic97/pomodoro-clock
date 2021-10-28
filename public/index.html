@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="theme-1">
+<html lang="en" class="theme-1 font-1">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,14 +52,33 @@
     <div class="card">
       
       <div class="border-bottom">
-        <div class="container padding-top-bottom">
+        <div class="container padding-top-bottom first-line">
           <h4>Settings</h4>
+          <button class="exit-modal-btn"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><path fill="#1E213F" fill-rule="evenodd" d="M11.95.636l1.414 1.414L8.414 7l4.95 4.95-1.414 1.414L7 8.414l-4.95 4.95L.636 11.95 5.586 7 .636 2.05 2.05.636 7 5.586l4.95-4.95z" opacity=".5"/></svg></button>
         </div>
       </div>
       
       <div class="container">
         <div class="border-bottom padding-top-bottom">
           <h4>Time (Minutes)</h4>
+
+          <div class="time-inputs">
+            <div class="time-container">
+              <label for="pomodoro">pomodoro</label>
+              <input type="number" name="pomodoro" id="pomodoro" min="1" value="25" onKeyDown="return false">
+            </div>
+  
+            <div class="time-container">
+              <label for="short-break">short break</label>
+              <input type="number" name="short-break" id="short-break" min="1" value="5" onKeyDown="return false">
+            </div>
+  
+            <div class="time-container">
+              <label for="long-break">long break</label>
+              <input type="number" name="long-break" id="long-break" min="1" value="15" onKeyDown="return false">
+            </div>
+          </div>
+
         </div>
       </div>
       
@@ -67,9 +86,9 @@
         <div class="border-bottom padding-top-bottom font-container">
           <h4>Font</h4>
           <div class="circle-containers">
-            <input type="radio" class="circle-radio" name="font" id="font1" checked>
-            <input type="radio" class="circle-radio" name="font" id="font2">
-            <input type="radio" class="circle-radio" name="font" id="font3">
+            <input type="radio" class="circle-radio font" name="font" id="font1" value="font-1" checked>
+            <input type="radio" class="circle-radio font" name="font" id="font2" value="font-2">
+            <input type="radio" class="circle-radio font" name="font" id="font3" value="font-3">
           </div>
         </div>
       </div>
@@ -78,9 +97,9 @@
         <div class="colors-container">
           <h4>Color</h4>
           <div class="circle-containers">
-            <input type="radio" class="circle-radio" name="theme" id="theme1" checked>
-            <input type="radio" class="circle-radio" name="theme" id="theme2">
-            <input type="radio" class="circle-radio" name="theme" id="theme3">
+            <input type="radio" class="circle-radio theme" name="theme" id="theme1"  value="theme-1" checked>
+            <input type="radio" class="circle-radio theme" name="theme" id="theme2" value="theme-2" >
+            <input type="radio" class="circle-radio theme" name="theme" id="theme3" value="theme-3" >
           </div>
         </div>
       </div>

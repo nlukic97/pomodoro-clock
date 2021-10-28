@@ -29,7 +29,7 @@ h1 {
     font-size: 100px;
     line-height: 120px;
     letter-spacing: -5px;
-    color: var(--color-gray);
+    color: #D7E0FF;
 }
 
 h1.heading {
@@ -48,7 +48,7 @@ h3, .pause-button {
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 15px;
-    color: var(--color-gray);
+    color: #D7E0FF;
 }
 
 h4 {

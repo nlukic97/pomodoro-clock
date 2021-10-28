@@ -30,9 +30,3 @@ document.querySelector('.settings-btn').addEventListener('click',function(){
     document.body.classList.add('open-settings')
 })
 
-// Event listener to close the settings modal (and apply the changes)
-document.querySelector('.apply-btn').addEventListener('click',function(){
-    //do some other stuff too
-    document.body.classList.remove('open-settings')
-})
-

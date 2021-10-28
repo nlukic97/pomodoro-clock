@@ -10,11 +10,22 @@
     --primary-color:#D881F8;
 }
 
+:root.font-1 {
+    --primary-font:'Kumbh Sans',sans serif;
+}
+
+:root.font-2 {
+    --primary-font:'Roboto Slab',sans serif;
+
+}
+:root.font-3 {
+    --primary-font:'Space Mono',sans serif;
+}
+
 :root {
     --color-gray:#D7E0FF;
-    --color-dark-blue:#1E213F;
 
-    --font-1:'Kumbh Sans',sans serif;
+    /* --font-1:'Kumbh Sans',sans serif;
     --font-2:'Roboto Slab',sans serif;
-    --font-3:'Space Mono',sans serif;
+    --font-3:'Space Mono',sans serif; */
 }
