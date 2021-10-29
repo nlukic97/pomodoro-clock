@@ -3,7 +3,6 @@ import * as TimerSettings from './TimerSettings.js';
 
 let circle = document.querySelector('.progress-circle');
 
-const circumference = circle.getTotalLength()
 let countdownInterval;
 let secondsPassed = 0; // the amount of seconds that has passed on the timer
 let countdownActive = false;
@@ -12,6 +11,7 @@ let countdownActive = false;
 window.addEventListener('load',function(){
     setProgress(100)
 })
+
 
 // This will contain all time durations the user has added for different timers
 var timerInfo = {
@@ -86,6 +86,7 @@ document.querySelector('.timer-handle-button').addEventListener('click',function
 
 // function that draws the circle in proportion to the % of time that has passed on the counter
 function setProgress(percent){
+    var circumference = circle.getTotalLength() //getting the circumference every second, just in case the user changes the screen size mid timer
     circle.style.strokeDasharray = circumference;
     circle.style.strokeDashoffset = circumference - percent * circumference / 100;
 }
