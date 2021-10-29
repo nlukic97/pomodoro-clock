@@ -1,0 +1,344 @@
+* {
+    margin:0;
+    Padding:0;
+}
+
+body {
+    font-family:var(--primary-font);
+    background-color: #1E213F;
+}
+
+button {
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+
+/* utility classes */
+.container {
+    padding: 0 40px;
+}
+
+.padding-top-bottom {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+/** Timer Settings component*/
+.timer-states {
+    width:373px;
+    margin: 0 auto;
+    display: flex;
+    background-color: #161932;
+    border-radius: 100px;
+    padding: 10px;
+}
+
+.timer-states .state  {
+    outline: none;
+    border: none;
+    flex: 1;
+    text-align: center;
+    padding: 16px;
+    font-size: 13px;
+    background-color: transparent;
+    color: #D7E0FF;
+    font-weight: 700;    
+}
+
+.timer-states .state.current {
+    background-color: var(--primary-color);
+    color:#1E213F;
+    border-radius: 100px;
+}
+
+.timer-states .state:not(.current) {
+    opacity: 0.5;
+}
+
+.timer-states .state.current:hover {
+    cursor: default;
+}
+
+
+.timer-states .state:not(.current):hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+
+/** The container for the counter  */
+.counter-container {
+    width: 366px;
+    height: 366px;
+    border-radius: 50%;
+    background-color: #161932;
+    position: relative;
+    margin: 50px auto 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.counter-container::after {
+    content:'';
+    position: absolute;
+    width: 112%;
+    height: 112%;
+    top: -6%;
+    left: -6%;
+    z-index: -1;
+    background: linear-gradient(135deg, #0E112A, #2E325A);
+    border-radius: 50%;
+    /* filter: drop-shadow(-50px -50px 100px #272C5A) drop-shadow(50px 50px 100px #121530); */
+}
+
+/** Circle progress  */
+.progress {
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+    stroke: var(--primary-color);
+}
+
+.progress .progress-circle.with-transition {
+    transition: stroke-dashoffset 1s linear;
+}
+
+/** Settings gear*/
+.settings-btn-container {
+    text-align: center;
+    margin-top: 72px;
+}
+
+button.settings-btn {
+    margin-top: 60px;
+    display: inline-block;
+    margin: 0 auto;
+    width: 27px;
+    height: 28px;
+    fill:#D7E0FF;
+    opacity: 0.5;
+}
+
+button.settings-btn:hover {
+    cursor: pointer;
+}
+
+button.settings-btn:hover {
+    fill:#D7E0FF;
+    opacity: 1;
+}
+
+
+/** Card component*/
+.settings-overlay {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    z-index: 4;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    display: none;
+}
+
+body.open-settings {
+    overflow:hidden;
+}
+
+body.open-settings .settings-overlay {
+    display: flex;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.card {
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    width: 540px;
+    margin: 60px auto 60px;
+}
+
+.card h4 {
+    color: #161932;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #E3E1E1;
+}
+
+.first-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.first-line h4 {
+    font-size: 32px;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    line-height: 100%;
+}
+
+.font-container, .colors-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* -------- Timer setting -------- */
+.time-inputs {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+}
+
+.time-container {
+    flex: 1;
+    font-weight: 700;
+}
+
+.time-container label {
+    color: rgba(30, 33, 63, 0.4);
+    font-size: 12px;
+    display: inline-block;
+}
+
+.time-container input {
+    width: 140px;
+    font-size: 14px;
+    background-color: #EFF1FA;
+    color: #1E213F;
+    font-weight: inherit;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 8px;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+/* -------- circle radio buttons for selecting the font and color theme -------- */
+.circle-radio {
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.circle-radio:not(:first-child){
+    margin-left: 15px;
+}
+
+.circle-radio:hover {
+    cursor: pointer;
+}
+
+.circle-radio:checked:hover {
+    cursor: default;
+}
+
+.circle-radio::after {
+    content:'';
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.font-container .circle-radio:after {
+    background-color: #EFF1FA;
+    color: #1E213F;
+    content:'Aa';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.font-container .circle-radio:checked:after {
+    background-color: #161932;
+    color: #fff;
+}
+
+.font-container .circle-radio:first-child:after {
+    font-family: 'Kumbh Sans',sans serif;
+}
+
+.font-container .circle-radio:nth-child(2):after {
+    font-family: 'Roboto Slab',sans serif;
+}
+
+.font-container .circle-radio:nth-child(3):after {
+    font-family: 'Space Mono',sans serif;
+}
+
+/*colors circle selectors*/
+.colors-container .circle-radio:first-child:after {
+    background-color: #F87070;
+    font-family: 'Kumbh Sans',sans serif;
+}
+
+.colors-container .circle-radio:checked:first-child:after {
+    background: url('../assets/tick.svg') no-repeat center center/contain;    
+    background-size: 40%;
+    background-color: #F87070;
+}
+
+.colors-container .circle-radio:nth-child(2):after {
+    background-color: #70F3F8;
+    font-family: 'Roboto Slab',sans serif;
+}
+
+.colors-container .circle-radio:checked:nth-child(2):after {
+    background: url('../assets/tick.svg') no-repeat center center/contain;    
+    background-size: 40%;
+    background-color: #70F3F8;
+}
+
+.colors-container .circle-radio:nth-child(3):after {
+    background-color: #D881F8;
+    font-family: 'Space Mono',sans serif;
+}
+
+.colors-container .circle-radio:checked:nth-child(3):after {
+    background: url('../assets/tick.svg') no-repeat center center/contain;    
+    background-size: 40%;
+    background-color: #D881F8;
+}
+
+
+button.apply-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    box-sizing: content-box;
+    border-radius: 100px;
+    padding: 20px 50px;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 100%;
+    font-weight: 700;
+    position: relative;
+    bottom: -26px;
+    left: 50%;
+    transform: translateX(-50%);
+}

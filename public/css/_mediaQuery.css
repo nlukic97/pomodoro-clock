@@ -1,0 +1,58 @@
+@media screen and (max-width: 574px) {
+    .timer-states {
+        width: 327px;
+    }
+
+    .counter-container {
+        width: 267px;
+        height: 267px;
+    }
+
+    h1 {
+        font-size: 80px;
+    }
+
+    h3, .timer-handle-button {
+        font-size: 14px;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .card h4 {
+        text-align: center;
+    }
+
+    .time-inputs {
+        flex-direction: column;
+    }
+
+    .time-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 8px;
+    }
+
+    .time-container input {
+        float: right;
+        margin-top: 0;
+    }
+
+    .font-container, .colors-container {
+        flex-direction: column;
+    }
+
+    .font-container .circle-containers, .colors-container .circle-containers {
+        margin-top: 15px;
+    }
+
+}
+
+/*adjusted for a lower screen height (flex looks bad when the screen height it anything lower than 522px, the modal is not fully visible) */
+@media screen and (max-height:665px) {
+    body.open-settings .settings-overlay {
+        display: block;
+    }
+}

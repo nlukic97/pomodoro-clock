@@ -1,36 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-1 font-1">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zadatak 7 | Nikola Lukic</title>
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- JavaScript -->
-    <script src="js/script.js" defer></script>
-
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zadatak 7 | Nikola Lukic</title>
+  <style src='js/font-imports.js'></style>
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+  
+  <!-- JavaScript -->
+  <script type="module" src="js/script.js" defer></script>
+  
+  
 </head>
-<body>
-
-    <!-- <svg class="progress" min-x='0' min-y='0' width="300" height='300'> -->
-    <svg class="progress" width='200' height='200'>
-      <!-- <h1>e</h1> -->
-      <circle 
-        class="progress-circle" 
-        cx="100" 
-        cy="100" 
-        r="47%" 
-        fill='transparent' 
-        stroke='blue' 
-        stroke-width='5' 
-        stroke-linecap='round'
-      />
-      <!-- <text class="loading" fill='blue' x='50' y='50' text-anchor='middle' alignment-baseline='middle'>Ok</text> -->
+<body class="">
+  
+  <h1 class="heading">Pomodoro</h1>
+  
+  <div class="timer-states">
+    <div class="state current" data-duration='pomodoro'><span>pomodoro</span></div>
+    <div class="state" data-duration='shortBreak'><span>short break</span></div>
+    <div class="state" data-duration='longBreak'><span>long break</span></div>
+  </div>
+  
+  <div class="counter-container">
+    
+    <svg class="progress">
+      <circle class="progress-circle" cx="50%" cy="50%" r="45%" fill='transparent' stroke-width='10' stroke-linecap='round'/>
     </svg>
+    
+    
+    <h1 class="current-time">25:00</h1>
+    <button class="timer-handle-button">start</button>
+    
+    
+  </div>
+  
+  <div class="settings-btn-container">
+    <button class="settings-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+        <path id="setting-gear" d="M26.965 17.682l-2.927-2.317c.055-.448.097-.903.097-1.365 0-.462-.042-.917-.097-1.365l2.934-2.317a.702.702 0 00.167-.896l-2.775-4.851a.683.683 0 00-.847-.301l-3.454 1.407a10.506 10.506 0 00-2.345-1.379l-.52-3.71A.716.716 0 0016.503 0h-5.55a.703.703 0 00-.687.588l-.52 3.71c-.847.357-1.63.819-2.345 1.379L3.947 4.27a.691.691 0 00-.847.301L.325 9.422a.705.705 0 00.167.896l2.927 2.317c-.055.448-.097.903-.097 1.365 0 .462.042.917.097 1.365L.492 17.682a.702.702 0 00-.167.896L3.1 23.429a.683.683 0 00.847.301L7.4 22.323a10.506 10.506 0 002.345 1.379l.52 3.71c.056.329.34.588.687.588h5.55a.703.703 0 00.687-.588l.52-3.71c.847-.357 1.631-.819 2.346-1.379l3.454 1.407c.313.119.673 0 .847-.301l2.775-4.851a.705.705 0 00-.167-.896zM13.73 18.9c-2.685 0-4.857-2.191-4.857-4.9 0-2.709 2.172-4.9 4.857-4.9 2.684 0 4.856 2.191 4.856 4.9 0 2.71-2.172 4.9-4.856 4.9z" opacity=".5"/>
+      </svg>
+    </button>
+  </div>
+  
+  
+  <div class="settings-overlay">
+    <div class="card">
+      
+      <div class="border-bottom">
+        <div class="container padding-top-bottom first-line">
+          <h4>Settings</h4>
+          <button class="exit-modal-btn"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><path fill="#1E213F" fill-rule="evenodd" d="M11.95.636l1.414 1.414L8.414 7l4.95 4.95-1.414 1.414L7 8.414l-4.95 4.95L.636 11.95 5.586 7 .636 2.05 2.05.636 7 5.586l4.95-4.95z" opacity=".5"/></svg></button>
+        </div>
+      </div>
+      
+      <div class="container">
+        <div class="border-bottom padding-top-bottom">
+          <h4>Time (Minutes)</h4>
 
+          <div class="time-inputs">
+            <div class="time-container">
+              <label for="pomodoro">pomodoro</label>
+              <input type="number" name="pomodoro" id="pomodoro" min="1" max="99" value="25" onKeyDown="return false">
+            </div>
+  
+            <div class="time-container">
+              <label for="short-break">short break</label>
+              <input type="number" name="short-break" id="shortBreak" min="1" max="99" value="5" onKeyDown="return false">
+            </div>
+  
+            <div class="time-container">
+              <label for="long-break">long break</label>
+              <input type="number" name="long-break" id="longBreak" min="1" max="99" value="15" onKeyDown="return false">
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+      <div class="container">
+        <div class="border-bottom padding-top-bottom font-container">
+          <h4>Font</h4>
+          <div class="circle-containers">
+            <input type="radio" class="circle-radio font" name="font" id="font1" value="font-1" checked>
+            <input type="radio" class="circle-radio font" name="font" id="font2" value="font-2">
+            <input type="radio" class="circle-radio font" name="font" id="font3" value="font-3">
+          </div>
+        </div>
+      </div>
+      
+      <div class="container padding-top-bottom">
+        <div class="colors-container">
+          <h4>Color</h4>
+          <div class="circle-containers">
+            <input type="radio" class="circle-radio theme" name="theme" id="theme1"  value="theme-1" checked>
+            <input type="radio" class="circle-radio theme" name="theme" id="theme2" value="theme-2" >
+            <input type="radio" class="circle-radio theme" name="theme" id="theme3" value="theme-3" >
+          </div>
+        </div>
+      </div>
+      
+      
+      <button class="apply-btn">Apply</button>
+    </div>
+  </div>
+  
 </body>
 </html>

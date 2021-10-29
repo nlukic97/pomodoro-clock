@@ -1,0 +1,27 @@
+:root.theme-1 {
+    --primary-color:#F87070;
+}
+
+:root.theme-2 {
+    --primary-color:#70F3F8;
+
+}
+:root.theme-3 {
+    --primary-color:#D881F8;
+}
+
+:root.font-1 {
+    --primary-font:'Kumbh Sans',sans serif;
+}
+
+:root.font-2 {
+    --primary-font:'Roboto Slab',sans serif;
+
+}
+:root.font-3 {
+    --primary-font:'Space Mono',sans serif;
+}
+
+:root {
+    --color-gray:#D7E0FF;
+}
