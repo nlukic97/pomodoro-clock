@@ -49,6 +49,7 @@ h3, .timer-handle-button {
     line-height: 19px;
     letter-spacing: 15px;
     color: #D7E0FF;
+    font-family: var(--primary-font);
 }
 
 h4 {
