@@ -8,7 +8,10 @@ let countdownInterval;
 let secondsPassed = 0; // the amount of seconds that has passed on the timer
 let countdownActive = false;
 
-setProgress(100)
+// adding this to happen when all the html elements are loaded
+window.addEventListener('load',function(){
+    setProgress(100)
+})
 
 // This will contain all time durations the user has added for different timers
 var timerInfo = {
