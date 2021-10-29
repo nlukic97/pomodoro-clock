@@ -1,4 +1,4 @@
-// converts seconds 
+// converts seconds to a human readable time (with minutes and hours)
 export function secondsToTime(seconds){
     let formatMinutes = 0;
     let formatSeconds = 0    

@@ -5,8 +5,10 @@ let circle = document.querySelector('.progress-circle');
 
 const circumference = circle.getTotalLength()
 let countdownInterval;
+let secondsPassed = 0; // the amount of seconds that has passed on the timer
 let countdownActive = false;
-let i = 0; // the amount of seconds that has passed on a timer
+
+setProgress(100)
 
 // This will contain all time durations the user has added for different timers
 var timerInfo = {
@@ -16,10 +18,8 @@ var timerInfo = {
 }
 
 
-setProgress(100)
 
-
-
+/** ************************ Event Listeners ************************ */
 // Event listener to open the settings modal
 document.querySelector('.settings-btn').addEventListener('click',function(){
     TimerSettings.openModal()
@@ -28,13 +28,14 @@ document.querySelector('.settings-btn').addEventListener('click',function(){
 
 // activated when the color, font, and times are saved
 document.querySelector('button.apply-btn').addEventListener('click',function(){
-    resetToStart()
-
-    timerInfo = TimerSettings.applyChanges();
+    if(handleActiveTimer() === true){
+        resetToStart()
     
-    let key = TimerSettings.getCurrentTimerKey();
-    let time = Time.secondsToTime(timerInfo[key])
-    TimerSettings.updateCurrentTime(time)  
+        timerInfo = TimerSettings.applyChanges();
+        
+        let key = TimerSettings.getCurrentTimerKey();
+        TimerSettings.updateCurrentTime(Time.secondsToTime(timerInfo[key]))  
+    }
 })
 
 
@@ -47,15 +48,12 @@ document.querySelector('button.exit-modal-btn').addEventListener('click',functio
 // this changes the displayed timer, preparing it to be ready for countdown
 document.querySelectorAll('.timer-states .state').forEach(function(btn){
     btn.addEventListener('click',function(){
-        let change = handleActiveTimer()
-
-        if(change === true){
+        if(handleActiveTimer() === true){
             resetToStart()
             TimerSettings.changeCurrentTimer(this)
             
-            let key = this.getAttribute('data-duration');
-            let time = Time.secondsToTime(timerInfo[key])
-            TimerSettings.updateCurrentTime(time)
+            let key = TimerSettings.getCurrentTimerKey(this);
+            TimerSettings.updateCurrentTime(Time.secondsToTime(timerInfo[key]))
         }
     }) 
 })
@@ -80,6 +78,9 @@ document.querySelector('.timer-handle-button').addEventListener('click',function
 })
 
 
+
+/** ************************ Methods ************************ */
+
 // function that draws the circle in proportion to the % of time that has passed on the counter
 function setProgress(percent){
     circle.style.strokeDasharray = circumference;
@@ -91,7 +92,7 @@ function resetToStart(){
     clearInterval(countdownInterval)
     circle.classList.remove('with-transition')
     setProgress(100)
-    i = 0;
+    secondsPassed = 0;
     countdownActive = false; 
     document.querySelector('.timer-handle-button').innerText = 'start'
 }
@@ -100,28 +101,23 @@ function resetToStart(){
 // the function that does the counting
 function startCountdown(){
     let currentMaxTime = timerInfo[TimerSettings.getCurrentTimerKey()]
-    console.log(currentMaxTime);
     countdownActive = true
     
-    //removing the animation when setting the circle to the first frame
-    if(i === 0){
-        circle.classList.remove('with-transition');
-        setProgress(0)
-    }
+    // Only set the progress to 0 if 0 seconds have passed (the timer has been started and not resumed after pasue)
+    if(secondsPassed === 0) setProgress(0); // circle.classList.remove('with-transition');
     
     //setting the interval (saved in a global variable for later access)
     countdownInterval = setInterval(function(){        
-        i++
+        secondsPassed++
 
         //adding transition for the duration of the timer after the first frame (0%) has been added
-        if(i === 1) circle.classList.add('with-transition');
+        if(secondsPassed === 1) circle.classList.add('with-transition');
 
-        setProgress(i / currentMaxTime * 100)
-        TimerSettings.updateCurrentTime(Time.secondsToTime(currentMaxTime - i))
+        setProgress(secondsPassed / currentMaxTime * 100)
+        TimerSettings.updateCurrentTime(Time.secondsToTime(currentMaxTime - secondsPassed))
 
-        
-        if(i >= currentMaxTime){
-            i = 0; //reset global
+        if(secondsPassed >= currentMaxTime){
+            secondsPassed = 0; //reset global
             countdownActive = false
             document.querySelector('.timer-handle-button').innerText = 'restart'
             return clearInterval(countdownInterval)
@@ -134,7 +130,7 @@ function startCountdown(){
 // asks for confirmation from a user that they are aware their next action will end their currently active timer
 function handleActiveTimer(){
     if(countdownActive === true){
-        return confirm('Are you sure you want to end this timer?')
+        return confirm('Are you sure you want to end the active timer?')
     } else {
         return true
     }
